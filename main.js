@@ -9,3 +9,19 @@ function progressBar(totalTasks,doneTasks){
   myBar.style.width = percentDone;
   myBar.innerHTML = percentDone;
 };
+
+
+let totalTasks = parseInt(prompt("how many tasks do you need to do?"));
+let tasksDone = 0;
+
+const doneBTN = document.getElementById("doneBTN");
+doneBTN.addEventListener("click",function(){
+  tasksDone++;
+  progressBar(totalTasks,tasksDone);
+});
+
+const undoneBTN = document.getElementById("undoneBTN");
+undoneBTN.addEventListener("click",function(){
+  tasksDone--;
+  progressBar(totalTasks,tasksDone);
+});
